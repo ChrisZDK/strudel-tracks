@@ -1,4 +1,4 @@
-// "Barok" @by Pink Chaos
+// "Barok" @by SYNTHLESS
 
 samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2');
 

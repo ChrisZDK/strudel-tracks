@@ -1,0 +1,68 @@
+// "Pull Over (Remix)" @by SYNTHLESS
+// original 1993 track by Speedy J
+
+samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2');
+
+
+
+setcps(134/60/4) 
+
+$: s("bd*4").bank("rolandtr707")
+  .compressor(0.85)
+  .gain ("1.4")
+  .decay(0.8)
+  .sometimes(x => x.delay(0.10))
+  ._scope()
+$: s("SpeedyJ/2").fit()  
+  .gain(0.3)
+  .scrub(irand(16).div(16).seg(16))
+  .rib(333,1)
+  .pan("<0.2 0 .2 0>/2")
+  .orbit(1)  
+  .lpf(slider(2844, 500, 5000, 1))
+  ._scope()
+$: n(2).s("SpeedyJ/2").fit()
+  .gain(0.7)
+  .delay(slider(1.25, 0, 3, 0.25))
+  .scrub(irand(8).div(16).seg(16))
+  .rib("<4 20>",1)
+  .almostNever(ply("2 | 4"))
+  .orbit(2)
+  .lpf(slider(2589, 200, 5000, 1))
+  ._scope()
+$: n(1).s("SpeedyJ").clip("1")
+  .gain(1.2)
+  .room(1).roomsize(2)
+  .phaser(0.4)
+  .pan("<0.3 0 .3 0>/2")
+  .lpf(slider(5000, 200, 5000, 1))
+  .delay(slider(1, 0, 5, 0.25))
+  .lpenv(6)
+  ._scope()
+$: n("<[c2 g2]*6 [e2 G3]*8 [b1 f2]*6 [c2 G3]*8>").scale("A2:major").layer(
+   x=>x.n("1").s("gm_lead_8_bass_lead")
+    .vib(2)
+    .lpf(800)
+    .gain(slider(0.4, 0, 1, 0.05))
+    .lpf(slider(1084, 100, 5000, 1))
+    .orbit(3),
+  x=>x.n("2").s("gm_synth_strings_1")
+    .add(n(irand(16))
+    .room(.5) .roomsize(1)
+    .gain(slider(0.4, 0, 2, 0.05))
+    .phaser(2)
+    .orbit(4)
+  ))
+  ._punchcard()
+
+
+$: s("gm_pad_poly*8")
+  .gain(slider(0.25, 0, 1, 0.05))
+  .decay(0.2)
+  .sometimes(x => x.delay(1))
+  .n(irand(6))
+  .scale('Db minor')
+  .room(0.5).roomsize(3).orbit(5)
+  .lpf(sine.range(500, 4000).slow(16))
+  .lpf(slider(946, 500, 4000, 1))
+  ._punchcard()
