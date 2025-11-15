@@ -1,8 +1,8 @@
 //"Havana" @by SYNTHLESS
 
-setcps(80/60/4) 
+setcps(80/60/4)
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2');
+samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
 
 // --- DRUMS ---
 

@@ -1,6 +1,6 @@
 // "Barok" @by SYNTHLESS
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2');
+samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
 
 setcps(170/60/4) 
 

@@ -1,7 +1,7 @@
 //"Serene" @by SYNTHLESS
 // La Serenissima - Rondo Veneziano
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2');
+samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
 
 setcps(88/60/4)
 

@@ -1,6 +1,6 @@
 // "Radical" @by SYNTHLESS
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
+samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2') 
 
 setcpm(114/4)
 

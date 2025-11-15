@@ -1,6 +1,6 @@
 //"Umami" @by SYNTHLESS
 
-setcps(155/60/4) 
+setcps(155/60/4)
 
 // --- DRUMS ---
 

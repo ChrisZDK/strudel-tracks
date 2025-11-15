@@ -1,7 +1,7 @@
 // "Pull Over (Remix)" @by SYNTHLESS
 // original 1993 track by Speedy J
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2');
+samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
 
 
 
