@@ -1,8 +1,8 @@
-//"Havana" @by SYNTHLESS
+//"Havana" @by Pink Chaos
 
 setcps(80/60/4)
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
+samples('https://raw.githubusercontent.com/ChrisZDK/chaos/main/strudel.json?version=2')
 
 // --- DRUMS ---
 
@@ -20,13 +20,13 @@ $: s("hh*4 perc")
   .color("yellow")._scope()
 // --- SAMPLES ---
 
-$: n(10).s("break").clip(1)
+$: n(7).s("break").clip(1)
   .scrub(irand(16).div(16).seg(8))
   .rib("<80 8>",1)
   .almostNever(ply("2 | 4"))
   .room(0.4).roomsize(1) 
   .orbit(2)
-  .gain(slider(0.647,0,1))
+  .gain(slider(0.364,0,1))
   ._scope()
 
 $: n(5).s("break/2").clip(1)
@@ -35,7 +35,7 @@ $: n(5).s("break/2").clip(1)
   .almostNever(ply("2 | 3"))
   .room(0.4).roomsize(2) 
   .orbit(3)
-  .gain(slider(0.591,0,1))
+  .gain(slider(0.551,0,1))
   ._scope()
 // --- CHORDS ---
 

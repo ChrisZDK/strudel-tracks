@@ -1,7 +1,7 @@
-//"Serene" @by SYNTHLESS
+//"Serene" @by Pink Chaos
 // La Serenissima - Rondo Veneziano
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
+samples('https://raw.githubusercontent.com/ChrisZDK/chaos/main/strudel.json?version=2')
 
 setcps(88/60/4)
 
@@ -9,7 +9,7 @@ $: s("serenissima_drums/2").fit()
   .compressor(.85)
   .room(0.4).roomsize(1) 
   .orbit(2)
-  .gain(slider(0,0,1))
+  .gain(slider(0.66,0,1))
   .color("yellow")._scope()
 
 // --- Set chords
@@ -93,7 +93,7 @@ $: n("< [0 8 0@2 ]>")
   .orbit(3)
   .attack(.1)
   .room(1.5)
-  .gain(slider(0.4,0,1,0.1))
+  .gain(slider(0.5,0,1,0.1))
   .color("orange")._pianoroll()
  
 // --- ARP  ---

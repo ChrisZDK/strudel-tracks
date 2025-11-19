@@ -1,15 +1,12 @@
-// "Barok" @by SYNTHLESS
+// "Barok" @by Pink Chaos
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2')
+samples('https://raw.githubusercontent.com/ChrisZDK/chaos/main/strudel.json?version=2')
 
 setcps(170/60/4) 
 
 // --- drums ----
 
 $: s ("<bd sd [~ bd] sd>*4")
-  //.scrub(irand(16).div(16).seg(8))
-  //.rib("<25, 5>",1)
-  //.almostNever(ply("2 | 4"))
   .bank("rolandtr505")
   .compressor(.85)
   .color("yellow")._scope()
@@ -33,7 +30,7 @@ $: n(1) .s("break/2") .clip(0.2)
   ._scope()
 // --- ad-libs --- 
 
-$: n(3) .s("barok").clip("<0.2 0.5 0.1 0.4>/2") //drop
+$: n(1) .s("barok").clip("<0.2 0.5 0.1 0.4>/2") //drop
   .gain(slider(0.6, 0, 1, .1))
   .orbit(3)
   .pan("0 3 .4 1")
@@ -43,7 +40,7 @@ $: n(3) .s("barok").clip("<0.2 0.5 0.1 0.4>/2") //drop
   .lpenv(-3).lpa(.1).room(.5).fast(2)
   .color("red")._scope()
 
-$: n(4).s("barok/4").clip(0.7)
+$: n(3).s("barok/4").clip(0.7)
   .rib("<44 33 20>",1)
   .room(0.4).roomsize(6) .orbit(2)
   .pan("0 0.5 .6 1")

@@ -1,6 +1,6 @@
-// "Radical" @by SYNTHLESS
+// "Radical" @by Pink Chaos
 
-samples('https://raw.githubusercontent.com/ChrisZDK/chaotic/main/strudel.json?version=2') 
+samples('https://raw.githubusercontent.com/ChrisZDK/chaos/main/strudel.json?version=2') 
 
 setcpm(114/4)
 
@@ -25,7 +25,7 @@ $:sound("[bd*4]")
   .compressor(.85)
   .color("yellow")
 
-$:n("1*0.2").s("radical")
+$:n("1*0.2").s("vox")
   .room(0.4).roomsize(6) .orbit(2)
   .pan("0 0.5 .6 1")
   .sometimes(x => x.chop(8).delay(.5))
@@ -34,7 +34,7 @@ $:n("1*0.2").s("radical")
   .orbit(3)
   .color("magenta")
 
-$: s("radical/2").fit()
+$: s("vox:1/2").fit()
   .gain(.4)
   .scrub(irand(8).div(8).seg(16))
   .lpf(tri.range(100, 5000).slow(2))
