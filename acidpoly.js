@@ -16,7 +16,8 @@ const BASS_ON = 1
 const LEAD1_ON = 1
 const LEAD2_ON = 1
 const PAD_ON = 1
-const ARP_ON = 1
+
+// --- DRUMS --- 
 
 $: s("bd:4!4")
   .duck("3:4:5:6:7:8")
@@ -24,6 +25,7 @@ $: s("bd:4!4")
   .duckattack(.12)
   .postgain(KICK_ON ? .8 : 0)
   //.color("yellow")._scope()
+
 $: s("[- hh]*4")
   .gain(.65)
   .delay(.4)
@@ -44,6 +46,8 @@ x => x.gain(0.3)
   .room(0.2)
   .delay(0.25))
   //._scope()
+
+// --- LEADS --- 
 
 $: note("<5 4 0 9 7>*16")
   .late(.01)
@@ -66,6 +70,8 @@ $: note("<7 9 11 12>*8")
   .o(6)
   //.color("#00FFD6")._punchcard()
 
+// --- BASS --- 
+
 $: note("<0>*16").scale("e:minor").trans("<-24 -21>/4")
   .detune(rand)
   .s("supersaw")
@@ -73,6 +79,8 @@ $: note("<0>*16").scale("e:minor").trans("<-24 -21>/4")
   .o(4)
   .postgain(BASS_ON ? .75 : 0)
   //.color("magenta")._punchcard()
+
+// --- PAD --- 
 
 $: every(4, x =>
      x.lpf(1400).room(0.9),
@@ -88,6 +96,8 @@ $: every(4, x =>
   .rsize(4)
   .postgain(PAD_ON ? 0.35 : 0))
   //.color("orange")._punchcard()
+
+// --- 3 Osc synth --- 
 
 const chaos3Osc = pat =>
   stack(
@@ -106,3 +116,4 @@ const chaos3Osc = pat =>
 $: chaos3Osc(
     note("<[5 [4@3.5 0@4.5] 9 4]!3 [5 [4@3.5 0@4.5] 9@2]>/4"))
   .scale("e:minor")
+  //.color("#978EFF")._punchcard()
