@@ -17,7 +17,7 @@ const PAD_ON = 1
 // --- DRUMS --- 
 
 $: s("bd:4!4")
-  .duck("3:4:5:6:7:8")
+  .duck("3:4:6")
   .duckdepth(.4)
   .duckattack(.12)
   .postgain(KICK_ON ? .8 : 0)
@@ -37,17 +37,18 @@ $: s("[- oh]*4")
   .room(0.2)
   .delay(0.25)
   ._scope()
-
 // --- LEADS --- 
 
-$: note("<5 4 0 9 7>*16").late(.01).scale("e:minor")
+$: note("<5 4 0 9 7>*16")
+  .late(.01).scale("e:minor")
   .s("sawtooth")
   .acidenv("<.1 .2 .3 .35 .4 .35 .3 .2>/8")
   .room(.6).rsize(.8)
   .o(3)
   .postgain(LEAD1_ON ? .85 : 0)
   .color("cyan")._punchcard()
-$: note("<7 9 11 12>*8").scale("e:minor")
+$: note("<7 9 11 12>*8")
+  .scale("e:minor")
   .s("supersaw")
   .lpf(1200)
   .attack(0.05).release(0.9)
@@ -58,14 +59,14 @@ $: note("<7 9 11 12>*8").scale("e:minor")
 
 // --- BASS --- 
 
-$: note("<0>*16").scale("e:minor").trans("<-24 -21>/4")
+$: note("<0>*16")
+  .scale("e:minor").trans("<-24 -21>/4")
   .detune(rand)
   .s("supersaw")
   .acidenv("<.2 .3 .4 .5 .5 .4 .3 .2>/8")
   .o(4)
   .postgain(BASS_ON ? .65 : 0)
   .color("magenta")._punchcard()
-
 // --- PAD --- 
 
 $: every(4, x =>
@@ -88,7 +89,10 @@ const chaos3Osc = pat =>
     pat.s("sawtooth").add(7),
     pat.s("triangle").sub(12))
     .lpf(1200)
-    .attack(0.02).decay(0.5).sustain(0.8).release(1.0)
+    .attack(0.02)
+    .decay(0.5)
+    .sustain(0.8)
+    .release(1.0)
     .shape(0.25)
     .room(0.5).rsize(3)
     .postgain("<.1 .15 .20 .25 .25 .20 .15>/8")
@@ -97,3 +101,15 @@ $: chaos3Osc(
     note("<[5 [4@3.5 0@4.5] 9@2]>/4"))
   .scale("e:minor")
   .color("#FF7225")._punchcard()
+
+
+
+
+
+
+
+
+
+
+
+//
